@@ -1,0 +1,46 @@
+:root {
+  --bg: #f2f3f7; --card: #ffffff; --text: #14161c; --muted: #5d6270; --line: #e3e5ec;
+  --accent: #1f4fe8; --hero-a: #1d63f0; --hero-b: #0b1f66;
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #0b0c10; --card: #16181f; --text: #eef0f5; --muted: #9aa0ad; --line: #262a33; --accent: #8fb0ff; }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--bg); color: var(--text);
+  font: 17px/1.6 ui-rounded, -apple-system, BlinkMacSystemFont, "SF Pro Rounded", "Segoe UI", Roboto, sans-serif;
+  -webkit-text-size-adjust: 100%;
+}
+header {
+  background: linear-gradient(160deg, var(--hero-a), var(--hero-b)); color: #fff;
+  padding: 48px 16px 64px; text-align: center;
+}
+header .mark {
+  width: 72px; height: 72px; border-radius: 20px; margin: 0 auto 16px; display: grid; place-items: center;
+  background: rgba(255,255,255,.14); font-size: 34px;
+}
+header h1 { margin: 0; font-size: clamp(28px, 6vw, 40px); line-height: 1.15; letter-spacing: -.02em; }
+header p { margin: 10px auto 0; max-width: 34em; opacity: .85; }
+nav.languages { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-top: 24px; }
+nav.languages button {
+  border: 0; border-radius: 999px; padding: 8px 14px; font: inherit; font-size: 15px; cursor: pointer;
+  background: rgba(255,255,255,.14); color: #fff;
+}
+nav.languages button[aria-pressed="true"] { background: #fff; color: var(--hero-b); font-weight: 600; }
+main { max-width: 720px; margin: -32px auto 48px; padding: 0 16px; }
+section.card { background: var(--card); border-radius: 22px; padding: 24px; margin-bottom: 16px; }
+h2 { font-size: 20px; margin: 0 0 6px; letter-spacing: -.01em; }
+h2 + p, h2 + ul { margin-top: 0; }
+p, ul { margin: 0 0 16px; }
+li { margin-bottom: 6px; }
+.lede { font-size: 19px; font-weight: 600; }
+.muted { color: var(--muted); font-size: 15px; }
+a { color: var(--accent); }
+.mail {
+  display: inline-block; margin-top: 4px; padding: 12px 20px; border-radius: 999px;
+  background: var(--hero-a); color: #fff; text-decoration: none; font-weight: 600;
+}
+.links { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+footer { text-align: center; color: var(--muted); font-size: 14px; padding: 0 16px 40px; }
+[data-lang][hidden] { display: none; }
